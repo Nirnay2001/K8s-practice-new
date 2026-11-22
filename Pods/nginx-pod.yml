@@ -17,13 +17,14 @@ spec:
         - name: http
           containerPort: 80
           protocol: TCP
+      volumeMounts:
+        - name: shared-data
+          mountPath: /usr/share/nginx/html
 
     - name: sidecar
       image: busybox:stable
       command: ["sh","-c"]
-      env:
-        - name: ENV
-          value: UAT
+      
       args: 
         - | 
           while true; do
