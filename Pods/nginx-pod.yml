@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  contrainers:
+  containers:
     - name: nginx
       image: nginx:stable
       env:
