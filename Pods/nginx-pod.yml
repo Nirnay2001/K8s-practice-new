@@ -1,13 +1,18 @@
 apiVersion: v1
-kind: Pods
+kind: Pod
 metadata: 
   name: nginx-Pods
-  labels: app
-  env: UAT
+  labels:
+    app: nginx
 spec:
   contrainers:
     - name: nginx
       image: nginx:stable
+      env:
+        - name: ENV
+          value: UAT
+      command: ["nginx"]
+      args: ["-g","daemon off;"]
       ports:
         - name: http
           containerPort: 80
