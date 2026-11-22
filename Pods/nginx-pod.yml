@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pods
+metadata: 
+  name: nginx-Pods
+  labels: app
+  env: UAT
+spec:
+  contrainers:
+    - name: nginx
+      image: nginx:stable
+      ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
